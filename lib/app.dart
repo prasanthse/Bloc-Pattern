@@ -1,4 +1,5 @@
-import 'package:ecommerce/src/ui/splash_screen.dart';
+import 'package:ecommerce/src/bloc/app_bloc_provider.dart';
+import 'package:ecommerce/src/ui/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -6,7 +7,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return AppBlocProvider(
+        child: MaterialApp(
       title: "Ecommerce",
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
@@ -24,7 +26,7 @@ class App extends StatelessWidget {
               headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
               headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
               bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'))),
-      home: SplashScreen(),
-    );
+      home: HomeScreen(),
+    ));
   }
 }
